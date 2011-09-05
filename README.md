@@ -2,6 +2,16 @@
 to handle in-memory cache (works in node+browser).
 
 
+# Install it
+
+To install it on node
+
+    npm install microcache
+    
+To install the browser version, download it and include it like that
+
+    <script src="microcache.js"></script>   
+
 # API
 
 To instanciate a cache, do the following. You can have as many instances you want.
