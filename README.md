@@ -45,7 +45,18 @@ To return all the elements currently in the cache
 
 ## .getSet(key, value)
 
-To get an element from the cache, if it isnt already present, store it then return it
+To get an element from the cache, if it isnt already present, store it then return it.
 
     microcache.getSet(key, value);
 
+If second parameter is a function, it is called only if the key isnt contained
+in the cache. Thus the value isn't instanciated without need.
+
+    microcache.getSet(key, function(){ return value });
+
+
+## FAQ
+
+  * **Q.** what about plain ```var microcache = {}``` ? isnt this wrapper overengineering ?
+  * **A.**  i was thinking so too at first. but the syntax of a .getSet() without wrapper was too ugly for my taste :)
+```var a = cache[key] = (cache[key] || value)``` from @floriancargoet
